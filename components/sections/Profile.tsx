@@ -7,7 +7,7 @@ export default function Profile() {
   return (
     <section className="space-y-6 px-4 py-[18px]">
       {/* Profile section */}
-      <div className="flex flex-col gap-2 justify-between">
+      <div className="flex flex-col xxs:flex-row gap-2 justify-between">
         <div className="flex items-center gap-2">
           <div className="bg-zinc-400 dark:bg-zinc-600 size-1.5 rounded-full" />
           <h1 className="font-medium text-muted-foreground">

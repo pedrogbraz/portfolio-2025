@@ -62,13 +62,13 @@ export default function Navbar() {
       </ul>
       <aside className="space-x-1 flex items-center">
         <ModeToggle />
-        <Button
-          variant="outline"
-          className="text-xs bg-black dark:bg-[#383838] text-white flex items-center gap-1"
+        <Link
+          className="bg-black dark:bg-[#383838] text-white flex items-center gap-2 text-xs font-medium py-2 px-2.5 border rounded-md shadow"
+          href="/contact"
         >
           <PiPlusCircle className="text-muted-foreground" />
           Fale Comigo
-        </Button>
+        </Link>
       </aside>
     </nav>
   );
