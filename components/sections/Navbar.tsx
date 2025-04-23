@@ -10,8 +10,6 @@ import {
   PiGithubLogo,
   PiList,
 } from "react-icons/pi";
-
-import { Button } from "../ui/button";
 import {
   Sheet,
   SheetContent,
@@ -29,7 +27,7 @@ const navItems = [
   { href: "/my-profile", icon: PiGithubLogo },
 ];
 
-export default function Navbar() {
+export function Navbar() {
   const pathname = usePathname();
 
   return (

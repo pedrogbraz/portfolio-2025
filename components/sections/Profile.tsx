@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { PiPlusCircle, PiCopy } from "react-icons/pi";
 
-export default function Profile() {
+export function Profile() {
   return (
     <section className="space-y-6 px-4 py-[18px]">
       {/* Profile section */}

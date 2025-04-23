@@ -3,7 +3,7 @@ import { PiArrowRightBold } from "react-icons/pi";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaChevronRight } from "react-icons/fa6";
 
-export default function Projects() {
+export function Projects() {
   return (
     <section className="dark:bg-[#2C2C2C] rounded-md px-4 py-[18px] space-y-5">
       {/* Projects section */}
