@@ -39,8 +39,7 @@ export function Footer() {
           <Link
             className="underline text-blue-500"
             href="https://github.com/pedrogbraz"
-            avatar
-            Projetos
+            target="_blank"
           >
             Pedro Gontijo
           </Link>
