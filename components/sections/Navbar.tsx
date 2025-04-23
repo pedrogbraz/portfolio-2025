@@ -35,8 +35,8 @@ export default function Navbar() {
       </ul>
       <aside className="space-x-1">
         <ModeToggle />
-        <Button variant="outline">
-          <PiPlusCircle /> Hire Me
+        <Button variant="outline" className="text-xs">
+          <PiPlusCircle /> Fale Comigo
         </Button>
       </aside>
     </nav>
