@@ -26,7 +26,7 @@ export default function Profile() {
             Desenvolvedor Full-Stacks com foco em desenvolvimento web e
             softwares.
           </p>
-          <div className="space-x-3">
+          <div className="space-y-2 space-x-3">
             <Button className="text-xs">
               <PiPlusCircle /> Fale Comigo
             </Button>
