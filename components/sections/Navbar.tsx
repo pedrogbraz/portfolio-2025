@@ -31,7 +31,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-4 z-50 w-[94vw] md:max-w-[75vw] md:w-[75vw] lg:max-w-[45vw] lg:w-[45vw] flex items-center justify-between bg-white dark:bg-[#212121] pl-3 xxs:pl-4 pr-3 py-3 rounded-lg border shadow-xl">
+    <nav className="sticky top-4 z-50 w-[94vw] md:max-w-[75vw] md:w-[75vw] lg:max-w-[55vw] lg:w-[55vw] flex items-center justify-between bg-white dark:bg-[#212121] pl-3 xxs:pl-4 pr-3 py-3 rounded-lg border shadow-xl">
       <Sheet>
         <SheetTrigger className="xxs:hidden">
           <div className="bg-black dark:bg-[#383838] size-9 flex items-center justify-center rounded-md">
