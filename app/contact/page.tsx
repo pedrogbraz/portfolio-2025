@@ -74,17 +74,19 @@ export default function Contact() {
               name="name"
               value={form.name}
               onChange={handleChange}
+              className="border dark:border-none"
             />
             <Input
               placeholder="Seu email para contato"
               name="email"
               value={form.email}
               onChange={handleChange}
+              className="border dark:border-none"
             />
           </div>
           <Textarea
             placeholder="Me conte um pouco sobre o que precisa"
-            className="resize-none h-40"
+            className="resize-none h-40 border dark:border-none"
             name="message"
             value={form.message}
             onChange={handleChange}
