@@ -14,6 +14,8 @@ import {
 import { MyFollowers } from "@/components/sections/projects/my-followers";
 import { MyFollowings } from "@/components/sections/projects/my-followings";
 import Link from "next/link";
+import { fetchContributions } from "@/lib/github";
+import ContributionGrid from "@/components/sections/projects/contribution-grid";
 
 interface GitHubProfile {
   name: string;
@@ -43,6 +45,17 @@ export default function MyProfile() {
 
     fetchProfile();
   }, []);
+
+  function ContributionChart({ username }: { username: string }) {
+    const [contributions, setContributions] = useState<any[]>([]);
+    const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || ""; // use variável de ambiente segura
+
+    useEffect(() => {
+      fetchContributions(username, token).then(setContributions);
+    }, [username]);
+
+    return <ContributionGrid data={contributions} />;
+  }
 
   return (
     <section className="px-4 py-[18px] space-y-6">
@@ -140,6 +153,13 @@ export default function MyProfile() {
           </div>
         </div>
         <MyProjects />
+        {/* Contributions section */}
+        <div className="space-y-3">
+          <h2 className="text-sm text-muted-foreground font-medium">
+            Minhas Contribuições
+          </h2>
+          {profile && <ContributionChart username={profile.login} />}
+        </div>
       </section>
     </section>
   );
