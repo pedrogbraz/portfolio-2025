@@ -31,7 +31,7 @@ export function Projects() {
             </Avatar>
             <div>
               <h1 className="text-lg font-bold">Cooud Pay</h1>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground font-medium">
                 Desenvolvimento de uma plataforma de pagamento
               </p>
             </div>
