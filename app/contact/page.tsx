@@ -41,6 +41,7 @@ export default function Contact() {
       setStatusMessage("Mensagem enviada com sucesso!");
       setTimeout(() => setStatusMessage(""), 5000);
     } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
       setStatusMessage("Erro ao enviar mensagem. Tente novamente.");
       setTimeout(() => setStatusMessage(""), 5000);
     } finally {
