@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PiArrowRightBold } from "react-icons/pi";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaChevronRight } from "react-icons/fa6";
+import { AnimationLink } from "../animations/animation-link";
 
 export function Projects() {
   return (
@@ -12,12 +13,12 @@ export function Projects() {
           <div className="bg-zinc-400 dark:bg-zinc-600 size-1.5 rounded-full" />
           <h1 className="font-medium text-muted-foreground">Projetos</h1>
         </div>
-        <Link
+        <AnimationLink
           className="flex items-center gap-2 text-xs font-medium dark:bg-[#373737] py-2 px-3 border rounded-md shadow"
           href="/projects"
         >
           View All <PiArrowRightBold className="size-3.5" />
-        </Link>
+        </AnimationLink>
       </div>
       <div className="flex flex-col gap-4">
         <Link

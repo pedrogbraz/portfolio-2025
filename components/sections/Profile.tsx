@@ -1,9 +1,25 @@
+"use client";
+
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { PiPlusCircle, PiCopy } from "react-icons/pi";
+import { PiPlusCircle, PiCopy, PiCheckBold } from "react-icons/pi";
 
 export function Profile() {
+  const [copied, setCopied] = useState(false);
+  const email = "pedrobrazdevs@.com";
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Erro ao copiar o e-mail:", err);
+    }
+  };
+
   return (
     <section className="space-y-6 px-4 py-[18px]">
       {/* Profile section */}
@@ -21,7 +37,7 @@ export function Profile() {
       </div>
       <div className="flex flex-col xxs:flex-row items-center justify-between gap-10">
         <aside className="space-y-3.5 order-2 xxs:order-1">
-          <h1 className="text-3xl font-bold">Pedro Gontijo</h1>
+          <h1 className="text-3xl font-semibold">Pedro Gontijo</h1>
           <p className="text-muted-foreground">
             Desenvolvedor Full-Stacks com foco em desenvolvimento web e
             softwares.
@@ -30,8 +46,20 @@ export function Profile() {
             <Button className="text-xs">
               <PiPlusCircle /> Fale Comigo
             </Button>
-            <Button className="text-xs" variant="outline">
-              <PiCopy /> Copie meu email
+            <Button
+              className="text-xs"
+              variant="outline"
+              onClick={handleCopyEmail}
+            >
+              {copied ? (
+                <>
+                  <PiCheckBold /> Copiado
+                </>
+              ) : (
+                <>
+                  <PiCopy /> Copie meu email
+                </>
+              )}
             </Button>
           </div>
         </aside>
