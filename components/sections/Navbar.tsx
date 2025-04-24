@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   PiHouse,
-  PiPlusCircle,
   PiUserCircle,
   PiFolderSimple,
   PiGithubLogo,
   PiList,
+  PiPlusCircle,
 } from "react-icons/pi";
 import {
   Sheet,
@@ -19,6 +19,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import ModeToggle from "../mode-toggle";
+import { AnimationLink } from "../animations/animation-link";
 
 const navItems = [
   { href: "/", icon: PiHouse },
@@ -54,7 +55,11 @@ export function Navbar() {
           <li key={href}>
             <Link
               href={href}
-              className={pathname === href ? "text-black dark:text-white" : ""}
+              className={
+                pathname === href
+                  ? "text-black dark:text-white"
+                  : "hover:text-zinc-500 duration-300"
+              }
             >
               <Icon className="text-2xl" />
             </Link>
@@ -63,13 +68,13 @@ export function Navbar() {
       </ul>
       <aside className="space-x-1 flex items-center">
         <ModeToggle />
-        <Link
+        <AnimationLink
           className="bg-black dark:bg-[#383838] text-white flex items-center gap-2 text-xs font-medium py-2 px-2.5 border rounded-md shadow"
           href="/contact"
         >
           <PiPlusCircle className="text-muted-foreground" />
           Fale Comigo
-        </Link>
+        </AnimationLink>
       </aside>
     </nav>
   );

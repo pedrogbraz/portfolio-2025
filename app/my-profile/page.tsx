@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import { MyFollowers } from "@/components/sections/projects/my-followers";
 import { MyFollowings } from "@/components/sections/projects/my-followings";
+import Link from "next/link";
 
 interface GitHubProfile {
   name: string;
@@ -113,12 +114,17 @@ export default function MyProfile() {
                   </div>
                 </DialogContent>
               </Dialog>
-              <h1 className="text-muted-foreground">
-                <b className="text-black dark:text-white">
-                  {profile.public_repos}
-                </b>{" "}
-                repositórios
-              </h1>
+              <Link
+                href="https://github.com/pedrogbraz?tab=repositories"
+                target="_blank"
+              >
+                <h1 className="text-muted-foreground">
+                  <b className="text-black dark:text-white">
+                    {profile.public_repos}
+                  </b>{" "}
+                  repositórios
+                </h1>
+              </Link>
             </div>
           </div>
         </div>
