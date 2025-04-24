@@ -52,7 +52,10 @@ export function Navbar() {
       <ul className="hidden xxs:flex items-center gap-6 text-muted-foreground">
         {navItems.map(({ href, icon: Icon }) => (
           <li key={href}>
-            <Link href={href} className={pathname === href ? "text-white" : ""}>
+            <Link
+              href={href}
+              className={pathname === href ? "text-black dark:text-white" : ""}
+            >
               <Icon className="text-2xl" />
             </Link>
           </li>

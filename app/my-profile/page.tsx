@@ -73,7 +73,10 @@ export default function MyProfile() {
               <Dialog>
                 <DialogTrigger className="hover:cursor-pointer">
                   <h1 className="text-muted-foreground">
-                    <b className="text-white">{profile.followers}</b> seguidores
+                    <b className="text-black dark:text-white">
+                      {profile.followers}
+                    </b>{" "}
+                    seguidores
                   </h1>
                 </DialogTrigger>
                 <DialogContent>
@@ -92,7 +95,10 @@ export default function MyProfile() {
               <Dialog>
                 <DialogTrigger className="hover:cursor-pointer">
                   <h1 className="text-muted-foreground">
-                    <b className="text-white">{profile.following}</b> seguindo
+                    <b className="text-black dark:text-white">
+                      {profile.following}
+                    </b>{" "}
+                    seguindo
                   </h1>
                 </DialogTrigger>
                 <DialogContent>
@@ -108,7 +114,9 @@ export default function MyProfile() {
                 </DialogContent>
               </Dialog>
               <h1 className="text-muted-foreground">
-                <b className="text-white">{profile.public_repos}</b>{" "}
+                <b className="text-black dark:text-white">
+                  {profile.public_repos}
+                </b>{" "}
                 repositórios
               </h1>
             </div>
