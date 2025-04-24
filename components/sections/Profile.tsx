@@ -8,7 +8,7 @@ import { PiPlusCircle, PiCopy, PiCheckBold } from "react-icons/pi";
 
 export function Profile() {
   const [copied, setCopied] = useState(false);
-  const email = "pedrobrazdevs@.com";
+  const email = "pedrobrazdevs@gmail.com";
 
   const handleCopyEmail = async () => {
     try {
