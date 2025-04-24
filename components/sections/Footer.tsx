@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="space-y-1.5">
       <section className="w-full bg-[#FFFFFF] dark:bg-[#2C2C2C] px-4 py-[18px] rounded-sm space-y-7">
-        <div className="flex flex-col xxs:flex-row gap-2 items-center justify-between">
+        <div className="flex gap-2 items-center justify-between">
           <aside className="flex items-center gap-2">
             <div className="bg-zinc-400 dark:bg-zinc-600 size-1.5 rounded-full" />
             <h1 className="text-lg font-medium text-muted-foreground">
