@@ -3,6 +3,16 @@
 import { MyProjects } from "@/components/sections/projects/my-projects";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { MyFollowers } from "@/components/sections/projects/my-followers";
+import { MyFollowings } from "@/components/sections/projects/my-followings";
 
 interface GitHubProfile {
   name: string;
@@ -60,12 +70,43 @@ export default function MyProfile() {
               <p className="text-sm text-muted-foreground">@{profile.login}</p>
             </div>
             <div className="flex items-center gap-2 text-sm">
-              <h1 className="text-muted-foreground">
-                <b className="text-white">{profile.followers}</b> seguidores
-              </h1>
-              <h1 className="text-muted-foreground">
-                <b className="text-white">{profile.following}</b> seguindo
-              </h1>
+              <Dialog>
+                <DialogTrigger className="hover:cursor-pointer">
+                  <h1 className="text-muted-foreground">
+                    <b className="text-white">{profile.followers}</b> seguidores
+                  </h1>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Meus Seguidores</DialogTitle>
+                    <DialogDescription>
+                      Veja todos meus seguidores
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div>
+                    <MyFollowers />
+                  </div>
+                </DialogContent>
+              </Dialog>
+
+              <Dialog>
+                <DialogTrigger className="hover:cursor-pointer">
+                  <h1 className="text-muted-foreground">
+                    <b className="text-white">{profile.following}</b> seguindo
+                  </h1>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Quem eu sigo</DialogTitle>
+                    <DialogDescription>
+                      Veja todas as pessoas que eu sigo
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div>
+                    <MyFollowings />
+                  </div>
+                </DialogContent>
+              </Dialog>
               <h1 className="text-muted-foreground">
                 <b className="text-white">{profile.public_repos}</b>{" "}
                 repositórios
