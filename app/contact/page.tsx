@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 export default function Contact() {
   return (
     <>
-      <div className="px-4 py-[18px] space-y-8">
+      <section className="px-4 py-[18px] space-y-8">
         <div className="flex flex-col xxs:flex-row gap-2 justify-between">
           <div className="flex items-center gap-2">
             <div className="bg-zinc-400 dark:bg-zinc-600 size-1.5 rounded-full" />
@@ -35,7 +35,7 @@ export default function Contact() {
             </Button>
           </div>
         </section>
-      </div>
+      </section>
     </>
   );
 }
