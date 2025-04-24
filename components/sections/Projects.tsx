@@ -22,7 +22,7 @@ export function Projects() {
       <div className="flex flex-col gap-4">
         <Link
           href="/projects/cooudpay"
-          className="bg-[#373737] border rounded-lg px-4 py-3 flex items-center justify-between"
+          className="shadow-lg dark:shadow-none dark:bg-[#373737] border rounded-lg px-4 py-3 flex items-center justify-between"
         >
           <aside className="flex items-center gap-4">
             <Avatar className="size-14">
