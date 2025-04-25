@@ -31,7 +31,6 @@ import { AnimationLink } from "../animations/animation-link";
 const navItems = [
   { href: "/", icon: PiHouse, label: "Início" },
   { href: "/about-me", icon: PiUserCircle, label: "Sobre mim" },
-  { href: "/projects", icon: PiFolderSimple, label: "Meus Projetos" },
   { href: "/my-profile", icon: PiGithubLogo, label: "Meu GitHub" },
   { href: "/my-setup", icon: PiGear, label: "Meu Setup" },
 ];
