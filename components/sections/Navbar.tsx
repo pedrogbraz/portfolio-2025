@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import {
   PiHouse,
   PiUserCircle,
-  PiFolderSimple,
   PiGithubLogo,
   PiList,
   PiPlusCircle,
