@@ -19,8 +19,33 @@ const query = `
   }
 `;
 
+interface ContributionDay {
+  date: string;
+  contributionCount: number;
+}
+
+interface Week {
+  contributionDays: ContributionDay[];
+}
+
+interface ContributionCalendar {
+  weeks: Week[];
+}
+
+interface User {
+  contributionsCollection: {
+    contributionCalendar: ContributionCalendar;
+  };
+}
+
+interface GithubResponse {
+  data: {
+    user: User;
+  };
+}
+
 export async function fetchContributions(username: string, token: string) {
-  const res = await axios.post(
+  const res = await axios.post<GithubResponse>(
     GITHUB_GRAPHQL_API,
     {
       query,
@@ -35,7 +60,7 @@ export async function fetchContributions(username: string, token: string) {
   );
 
   const days = res.data.data.user.contributionsCollection.contributionCalendar.weeks.flatMap(
-    (week: any) => week.contributionDays
+    (week) => week.contributionDays
   );
 
   return days;

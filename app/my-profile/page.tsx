@@ -29,6 +29,29 @@ interface GitHubProfile {
   public_repos: number;
 }
 
+interface ContributionDay {
+  date: string;
+  contributionCount: number;
+}
+
+interface Week {
+  contributionDays: ContributionDay[];
+}
+
+interface ContributionCalendar {
+  weeks: Week[];
+}
+
+interface GithubContributionsResponse {
+  data: {
+    user: {
+      contributionsCollection: {
+        contributionCalendar: ContributionCalendar;
+      };
+    };
+  };
+}
+
 export default function MyProfile() {
   const [profile, setProfile] = useState<GitHubProfile | null>(null);
 
@@ -47,12 +70,12 @@ export default function MyProfile() {
   }, []);
 
   function ContributionChart({ username }: { username: string }) {
-    const [contributions, setContributions] = useState<any[]>([]);
+    const [contributions, setContributions] = useState<ContributionDay[]>([]);
     const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || ""; // use variável de ambiente segura
 
     useEffect(() => {
       fetchContributions(username, token).then(setContributions);
-    }, [username]);
+    }, [username, token]); // Adicionando `token` no array de dependências
 
     return <ContributionGrid data={contributions} />;
   }
