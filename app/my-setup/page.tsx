@@ -8,11 +8,11 @@ type SetupItem = {
 };
 
 const ItemCard = ({ src, alt, label, width }: SetupItem) => (
-  <div className="border-[--border] border inline-flex flex-col gap-6 items-center justify-center px-2 py-10 rounded-3xl hover:bg-white/10 hover:scale-[1.02] duration-300">
+  <div className="border-[--border] border inline-flex flex-col gap-6 items-center justify-center px-2 py-10 rounded-3xl hover:bg-white/10 shadow-xl hover:scale-[1.02] duration-300">
     <div className={`relative ${width} h-[100px] hover:scale-105 duration-300`}>
       <Image src={src} className="object-cover" fill alt={alt} />
     </div>
-    <h1 className="text-[--text-color] text-sm text-center">{label}</h1>
+    <h1 className="text-sm text-center">{label}</h1>
   </div>
 );
 
