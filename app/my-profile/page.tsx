@@ -28,11 +28,6 @@ interface GitHubProfile {
   public_repos: number;
 }
 
-interface ContributionDay {
-  date: string;
-  contributionCount: number;
-}
-
 export default function MyProfile() {
   const [profile, setProfile] = useState<GitHubProfile | null>(null);
 
