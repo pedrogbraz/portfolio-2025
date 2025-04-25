@@ -9,6 +9,7 @@ import {
   PiGithubLogo,
   PiList,
   PiPlusCircle,
+  PiGear,
 } from "react-icons/pi";
 import {
   Sheet,
@@ -18,14 +19,21 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import ModeToggle from "../mode-toggle";
 import { AnimationLink } from "../animations/animation-link";
 
 const navItems = [
-  { href: "/", icon: PiHouse },
-  { href: "/about-me", icon: PiUserCircle },
-  { href: "/projects", icon: PiFolderSimple },
-  { href: "/my-profile", icon: PiGithubLogo },
+  { href: "/", icon: PiHouse, label: "Início" },
+  { href: "/about-me", icon: PiUserCircle, label: "Sobre mim" },
+  { href: "/projects", icon: PiFolderSimple, label: "Meus Projetos" },
+  { href: "/my-profile", icon: PiGithubLogo, label: "Meu GitHub" },
+  { href: "/my-setup", icon: PiGear, label: "Meu Setup" },
 ];
 
 export function Navbar() {
@@ -50,22 +58,30 @@ export function Navbar() {
         </SheetContent>
       </Sheet>
 
-      <ul className="hidden xxs:flex items-center gap-6 text-muted-foreground">
-        {navItems.map(({ href, icon: Icon }) => (
-          <li key={href}>
-            <Link
-              href={href}
-              className={
-                pathname === href
-                  ? "text-black dark:text-white"
-                  : "hover:text-zinc-500 duration-300"
-              }
-            >
-              <Icon className="text-2xl" />
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <TooltipProvider>
+        <ul className="hidden xxs:flex items-center gap-6 text-muted-foreground">
+          {navItems.map(({ href, icon: Icon, label }) => (
+            <li key={href}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={href}
+                    className={
+                      pathname === href
+                        ? "text-black dark:text-white"
+                        : "hover:text-zinc-500 duration-300"
+                    }
+                  >
+                    <Icon className="text-2xl" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="bottom">{label}</TooltipContent>
+              </Tooltip>
+            </li>
+          ))}
+        </ul>
+      </TooltipProvider>
+
       <aside className="space-x-1 flex items-center">
         <ModeToggle />
         <AnimationLink

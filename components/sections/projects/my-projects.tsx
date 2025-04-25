@@ -122,7 +122,7 @@ export function MyProjects() {
       </ul>
 
       {totalPages > 1 && (
-        <Pagination className="mt-4 hidden ep:block">
+        <Pagination className="mt-4 hidden exp:block">
           <PaginationContent className="flex justify-center items-center gap-2">
             <PaginationItem>
               <PaginationPrevious
