@@ -14,8 +14,7 @@ import {
 import { MyFollowers } from "@/components/sections/projects/my-followers";
 import { MyFollowings } from "@/components/sections/projects/my-followings";
 import Link from "next/link";
-import { fetchContributions } from "@/lib/github";
-import ContributionGrid from "@/components/sections/projects/contribution-grid";
+import { PiUsers } from "react-icons/pi";
 
 interface GitHubProfile {
   name: string;
@@ -51,17 +50,6 @@ export default function MyProfile() {
     fetchProfile();
   }, []);
 
-  function ContributionChart({ username }: { username: string }) {
-    const [contributions, setContributions] = useState<ContributionDay[]>([]);
-    const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || ""; // use variável de ambiente segura
-
-    useEffect(() => {
-      fetchContributions(username, token).then(setContributions);
-    }, [username, token]); // Adicionando `token` no array de dependências
-
-    return <ContributionGrid data={contributions} />;
-  }
-
   return (
     <section className="px-4 py-[18px] space-y-6">
       <div className="flex flex-col xxs:flex-row gap-2 justify-between">
@@ -86,12 +74,15 @@ export default function MyProfile() {
           <div className="flex flex-col items-center xxs:items-start justify-center gap-4">
             <div className="flex flex-col items-center xxs:items-start">
               <h2 className="text-xl font-semibold">{profile.name}</h2>
-              <p className="text-sm text-muted-foreground">@{profile.login}</p>
+              <p className="text-sm text-muted-foreground">
+                {profile.login} · ele/dele
+              </p>
             </div>
             <div className="flex items-center gap-2 text-sm">
               <Dialog>
                 <DialogTrigger className="hover:cursor-pointer">
-                  <h1 className="text-muted-foreground">
+                  <h1 className="text-muted-foreground flex items-center gap-1">
+                    <PiUsers className="text-sm" />
                     <b className="text-black dark:text-white">
                       {profile.followers}
                     </b>{" "}
@@ -115,7 +106,7 @@ export default function MyProfile() {
                 <DialogTrigger className="hover:cursor-pointer">
                   <h1 className="text-muted-foreground">
                     <b className="text-black dark:text-white">
-                      {profile.following}
+                      · {profile.following}
                     </b>{" "}
                     seguindo
                   </h1>
@@ -138,7 +129,7 @@ export default function MyProfile() {
               >
                 <h1 className="text-muted-foreground">
                   <b className="text-black dark:text-white">
-                    {profile.public_repos}
+                    · {profile.public_repos}
                   </b>{" "}
                   repositórios
                 </h1>
@@ -158,13 +149,6 @@ export default function MyProfile() {
           </div>
         </div>
         <MyProjects />
-        {/* Contributions section */}
-        <div className="space-y-3">
-          <h2 className="text-sm text-muted-foreground font-medium">
-            Minhas Contribuições
-          </h2>
-          {profile && <ContributionChart username={profile.login} />}
-        </div>
       </section>
     </section>
   );
