@@ -101,7 +101,7 @@ export function MyProjects() {
                 href={repo.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400 font-semibold truncate hover:underline transition-colors duration-200"
+                className="text-blue-600 dark:text-blue-400 text-xs xxs:text-sm font-semibold truncate hover:underline transition-colors duration-200"
               >
                 {repo.name}
               </Link>
@@ -122,7 +122,7 @@ export function MyProjects() {
       </ul>
 
       {totalPages > 1 && (
-        <Pagination className="mt-4">
+        <Pagination className="mt-4 hidden ep:block">
           <PaginationContent className="flex justify-center items-center gap-2">
             <PaginationItem>
               <PaginationPrevious
@@ -145,7 +145,7 @@ export function MyProjects() {
             )}
 
             {totalPages > 5 && (
-              <PaginationItem>
+              <PaginationItem className="">
                 <PaginationEllipsis className="text-gray-500 dark:text-gray-400" />
               </PaginationItem>
             )}
