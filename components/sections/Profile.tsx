@@ -5,10 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { PiPlusCircle, PiCopy, PiCheckBold } from "react-icons/pi";
+import { useRouter } from "next/navigation";
 
 export function Profile() {
   const [copied, setCopied] = useState(false);
   const email = "pedrobrazdevs@gmail.com";
+  const router = useRouter();
 
   const handleCopyEmail = async () => {
     try {
@@ -43,7 +45,7 @@ export function Profile() {
             softwares.
           </p>
           <div className="space-y-2 space-x-3">
-            <Button className="text-xs">
+            <Button className="text-xs" onClick={() => router.push("/contact")}>
               <PiPlusCircle /> Fale Comigo
             </Button>
             <Button
