@@ -34,24 +34,6 @@ interface ContributionDay {
   contributionCount: number;
 }
 
-interface Week {
-  contributionDays: ContributionDay[];
-}
-
-interface ContributionCalendar {
-  weeks: Week[];
-}
-
-interface GithubContributionsResponse {
-  data: {
-    user: {
-      contributionsCollection: {
-        contributionCalendar: ContributionCalendar;
-      };
-    };
-  };
-}
-
 export default function MyProfile() {
   const [profile, setProfile] = useState<GitHubProfile | null>(null);
 
