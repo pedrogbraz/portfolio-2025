@@ -53,7 +53,7 @@ export default function AboutMe() {
           </div>
         </div>
         <div className="text-lg">
-          <div className="w-full flex flex-col lg:flex-row gap-5 border rounded-4xl p-4">
+          <div className="w-full flex flex-col lg:flex-row gap-5 rounded-4xl">
             <aside className="inline-flex items-center justify-center rounded-3xl border p-1">
               <div className="relative w-full lg:w-[25vw] aspect-[3/4]">
                 <Image
