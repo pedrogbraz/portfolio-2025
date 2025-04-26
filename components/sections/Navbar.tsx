@@ -45,14 +45,40 @@ export function Navbar() {
             <PiList className="text-xl" />
           </div>
         </SheetTrigger>
-        <SheetContent>
-          <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
-            <SheetDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </SheetDescription>
+        <SheetContent side="left" className="p-2">
+          <SheetHeader className="mb-6 p-3">
+            <SheetTitle className="text-lg">Menu</SheetTitle>
           </SheetHeader>
+
+          <nav className="flex flex-col gap-4">
+            {navItems.map(({ href, icon: Icon, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors
+                  ${
+                    pathname === href
+                      ? "bg-black text-white dark:bg-white dark:text-black"
+                      : "text-muted-foreground hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                  }
+                `}
+              >
+                <Icon className="text-xl" />
+                {label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="mt-8 border-t pt-4 flex items-center justify-between">
+            <Link
+              href="/contact"
+              className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-md bg-black text-white dark:bg-zinc-800 dark:text-white"
+            >
+              <PiPlusCircle className="text-base" />
+              Fale Comigo
+            </Link>
+            <ModeToggle />
+          </div>
         </SheetContent>
       </Sheet>
 

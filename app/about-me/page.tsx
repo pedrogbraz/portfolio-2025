@@ -38,7 +38,7 @@ const aboutMe = [
   {
     icon: PiLaptop,
     title: "Sistema",
-    description: "Linux",
+    description: "Windows/Linux",
   },
 ];
 
@@ -156,11 +156,11 @@ export default function AboutMe() {
               <div className="grid grid-cols-3 gap-4">
                 {aboutMe.map(({ title, description, icon: Icon }) => (
                   <div key={title}>
-                    <h1 className="flex items-center gap-1 text-sm font-medium">
-                      <Icon className="text-lg" />
+                    <h1 className="flex items-center gap-1 text-xs xxs:text-sm font-medium">
+                      <Icon className="text-base xxs:text-lg" />
                       {title}
                     </h1>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-xs xxs:text-sm text-muted-foreground text-nowrap text-ellipsis overflow-x-hidden">
                       {description}
                     </p>
                   </div>
