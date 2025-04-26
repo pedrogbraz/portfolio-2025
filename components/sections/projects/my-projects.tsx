@@ -89,12 +89,12 @@ export function MyProjects() {
   );
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
-      <ul className="grid gap-2 sm:grid-cols-2">
+    <div className="w-full">
+      <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {currentRepos.map((repo) => (
           <li
             key={repo.html_url}
-            className="bg-[#FFFFFF] dark:bg-[#212121] py-2.5 px-4 rounded-lg w-full flex flex-col gap-4 border shadow-2xl"
+            className=" py-2.5 px-4 rounded-lg w-full flex flex-col gap-4 border"
           >
             <div className="flex items-center justify-between">
               <Link
@@ -110,9 +110,7 @@ export function MyProjects() {
               </span>
             </div>
             <div className="flex items-center justify-between text-sm">
-              <span className="text-xs text-muted-foreground">
-                {repo.language || "README"}
-              </span>
+              <span className="text-xs">{repo.language || "README"}</span>
               <span className="text-xs text-muted-foreground">
                 {formatDate(repo.created_at)}
               </span>

@@ -46,8 +46,8 @@ export default function MyProfile() {
   }, []);
 
   return (
-    <section className="px-4 py-[18px] space-y-6">
-      <div className="flex flex-col xxs:flex-row gap-2 justify-between">
+    <section className="exp:px-4 py-[18px] space-y-6">
+      <div className="px-4 exp:px-0 flex flex-col xxs:flex-row gap-2 justify-between">
         <div className="flex items-center gap-2">
           <div className="bg-zinc-400 dark:bg-zinc-600 size-1.5 rounded-full" />
           <h1 className="font-medium text-muted-foreground">Meu Perfil</h1>
