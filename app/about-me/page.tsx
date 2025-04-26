@@ -28,7 +28,7 @@ const aboutMe = [
   {
     icon: PiFilmSlate,
     title: "Jogo",
-    description: "Grand Theft Auto V",
+    description: "GTA 5",
   },
   {
     icon: PiPizza,
