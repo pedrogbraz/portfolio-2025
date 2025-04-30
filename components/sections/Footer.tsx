@@ -5,7 +5,6 @@ import { FaLinkedinIn } from "react-icons/fa";
 const footerItems = [
   { href: "https://www.instagram.com/pedrogbraz/", icon: PiInstagramLogo },
   { href: "https://github.com/pedrogbraz", icon: PiGithubLogo },
-  { href: "https://www.linkedin.com/in/pedrogbraz/", icon: FaLinkedinIn },
 ];
 
 export function Footer() {
