@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { PiInstagramLogo, PiGithubLogo } from "react-icons/pi";
-import { FaLinkedinIn } from "react-icons/fa";
 
 const footerItems = [
   { href: "https://www.instagram.com/pedrogbraz/", icon: PiInstagramLogo },
