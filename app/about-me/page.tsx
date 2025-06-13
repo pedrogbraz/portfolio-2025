@@ -76,31 +76,26 @@ export default function AboutMe() {
                   </b>
                   , um{" "}
                   <b className="text-black dark:text-white">
-                    Desenvolvedor Front End
+                    Desenvolvedor Full Stacks
                   </b>{" "}
                   apaixonado por tecnologia e motivado pela{" "}
                   <b className="text-black dark:text-white">
                     criação de soluções digitais inovadoras
                   </b>
-                  . Estou avançando meu conhecimento através do{" "}
+                  . Estou avançando meu conhecimento através de{" "}
                   <b className="text-black dark:text-white">
-                    Programa de Certificação Profissional em Ciência da
-                    Computação da Universidade de Harvard
+                    documentações e cursos online
                   </b>
-                  , onde sou reconhecido por minha{" "}
+                  , como o{" "}
                   <b className="text-black dark:text-white">
-                    participação ativa em atividades e sociedades
-                  </b>
-                  , incluindo o{" "}
-                  <b className="text-black dark:text-white">
-                    renomado HarvardX CS50s
+                    HarvardX CS50, Rocketseat, Alura e Youtube
                   </b>
                   .
                 </p>
                 <p className="text-muted-foreground">
                   Estou constantemente buscando expandir meu conhecimento em{" "}
                   <b className="text-black dark:text-white">
-                    Java, Spring Boot e .NET
+                    Java, Spring Boot
                   </b>
                   , com uma{" "}
                   <b className="text-black dark:text-white">
@@ -119,7 +114,7 @@ export default function AboutMe() {
                 <p className="text-muted-foreground">
                   Como{" "}
                   <b className="text-black dark:text-white">
-                    Desenvolvedor Front End
+                    Desenvolvedor Full Stacks
                   </b>
                   , destaco-me na{" "}
                   <b className="text-black dark:text-white">
