@@ -6,7 +6,7 @@ const enterpriseInfos = [
   {
     image_url: "/cooudpay.png",
     name: "Cooud Pay",
-    stacks: "Todo o Front End",
+    stacks: "Todo o Front End e Integrações com a API",
     year: "2025",
     link: "https://cooudpay.com.br",
     description:
