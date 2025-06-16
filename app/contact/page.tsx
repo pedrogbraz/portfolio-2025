@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Loader2 } from "lucide-react";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -92,7 +93,8 @@ export default function Contact() {
             onChange={handleChange}
           />
           <Button className="w-full" onClick={handleSubmit} disabled={sending}>
-            {sending ? "Enviando..." : "Enviar"}
+            {sending && <Loader2 className="mr-2 animate-spin" />}
+            Enviar
           </Button>
           {statusMessage && (
             <div className="fixed text-xs font-medium bg-green-400/25 dark:bg-green-800/25 text-green-800 dark:text-green-700 bottom-4 right-4 p-4 rounded-lg">
