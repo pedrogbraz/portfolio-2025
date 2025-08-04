@@ -56,8 +56,8 @@ export default function MyProfile() {
 
       {profile && (
         <div className="flex flex-col xxs:flex-row items-center gap-4">
-          <div className="rounded-3xl border p-1.5">
-            <div className="relative size-28">
+          <div className="rounded-3xl">
+            <div className="relative size-24">
               <Image
                 src={profile.avatar_url}
                 alt={`${profile.name}'s avatar`}
