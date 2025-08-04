@@ -29,7 +29,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="w-full p-4">
+          <main className="container py-4">
             <Navbar />
             <section className="bg-[#FFFFFF] dark:bg-[#212121] p-1.5 rounded-lg border shadow-xl space-y-7">
               {children}
